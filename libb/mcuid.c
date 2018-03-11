@@ -1,5 +1,6 @@
 #include "mcuid.h"
 
+//调用之前需要先初始化串口
 void printMCUID(){
 	unsigned char idata *iptr = ID_ADDR_RAM;
 	unsigned char i;
