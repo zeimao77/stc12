@@ -5,7 +5,7 @@
 void Delay10us(unsigned int del){
 	unsigned char i;
   for(;del>0;del--){
-	  _nop_();
+//	  _nop_();
 	  _nop_();
 	  _nop_();
 	  i = 24;
@@ -16,7 +16,7 @@ void Delay10us(unsigned int del){
 void Delay1ms(unsigned int del){
 	unsigned char i, j;
   for(;del>0;del--){
-	  _nop_();
+//	  _nop_();
 	  i = 11;
 	  j = 190;
 	  do{
