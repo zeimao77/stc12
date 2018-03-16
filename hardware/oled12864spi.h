@@ -4,8 +4,8 @@
 #include "spi4.h"
 #include "bmp.h"
 
-sbit OLED_RST = P1^5;
-sbit OLED_DC = P1^6;
+sbit OLED_RST = P1^3;
+sbit OLED_DC = P1^4;
 
 void OLED_Init();
 
@@ -23,6 +23,7 @@ void OLED_display_OFF();
 //定义焦点位置：x [0-128]列  y[0-7]行
 void OLED_resetFocus(unsigned char x, unsigned char y);
 
+//绘制图片
 void OLED_drawImg(unsigned char bmp[]);
 
 //汉字

@@ -17,10 +17,15 @@
 //#define ENABLE_IAP 0X86    //SYSCLK < 2MHz
 //#define ENABLE_IAP 0X87    //SYSCLK < 1MHz
 
+//擦除扇区
 void iap_EraseSector(unsigned int addr);
+//ISP待机
 void iap_Disable();
+//写入数据到指定位置
 void iap_ByteProgram(unsigned int addr,unsigned char dat);
+//写入数据[先擦除再把数据写入到指定位置]
 void eeprom_write(unsigned int addr,unsigned char dat);
+//读取指定位置数据
 unsigned char eeprom_read(unsigned int addr);
 
 

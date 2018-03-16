@@ -1,5 +1,6 @@
 #include "pwm.h"
 
+//PWM初始化
 void PWM0_init(){
 	//设置内部时钟Fosc/2
   CMOD = 0x02;
@@ -11,6 +12,7 @@ void PWM0_init(){
 	CR = 1;
 }
 
+//PWM占空比设置
 void PWM0_set(unsigned char val){
 	CCAP0H = val;
 }

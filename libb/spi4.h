@@ -7,13 +7,20 @@
 #define SPI_SEND_START 0
 #define SPI_SEND_STOP 1;
 
-sbit SPI_CS = P1^0;
-sbit SPI_CLK = P1^2;
-sbit SPI_MISO = P1^3;
-sbit SPI_MOSI = P1^4;
+//时钟
+sbit SPI_CLK = P1^0;
+//主机输出
+sbit SPI_MISO = P1^1;
+//从机输入
+sbit SPI_MOSI = P1^2;
+//片选
+sbit SPI_CS = P1^5;
+
 
 
 //向spi总线上写入一个字节
 void SPI4_writeByte(unsigned char dat);
+
+void SPI4_readByte();
 
 #endif

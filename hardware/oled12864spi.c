@@ -58,7 +58,7 @@ void OLED_writeData(unsigned char dat){
 void OLED_clear(){
   unsigned char i,j;
 	for(i=0;i<8;i++){
-	  OLED_writeCmd(0xb0);  //设置页地址(0-7)
+	  OLED_writeCmd(0xb0+i);  //设置页地址(0-7)
 		OLED_writeCmd(0x00);    //设置列低地址
 		OLED_writeCmd(0x10);    //设置列高地址
 		for(j=0;j<128;j++){
@@ -88,11 +88,11 @@ void OLED_setFocus(unsigned char x, unsigned char y){
 //全屏显示图片
 void OLED_drawImg(unsigned char bmp[]){
   unsigned char i,j;
-	unsigned int ind;
+	unsigned int ind = 0;
 	for(i=0;i<8;i++){
 	  OLED_setFocus(0,i);
 		for(j=0;j<128;j++){
-		  OLED_writeData(bmp[ind]);
+		  OLED_writeData(bmp[ind++]);
 		}
 	}
 }
@@ -110,7 +110,7 @@ void OLED_drawChinese(unsigned char x0,unsigned char page,unsigned int ind){
 	}
 }
 
-//显示ascii   [16*8]
+//Ascii字符   [16*8]
 void OLED_drawAscii(unsigned char x0,unsigned char page,unsigned char ind){
   unsigned char i;
 	OLED_setFocus(x0,page);

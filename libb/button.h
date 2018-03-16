@@ -10,10 +10,14 @@
 //双击空隙
 #define INTERVAL_TIME 1000
 
+//单击事件实现此方法
 void Button1_click();
+//双击事件实现此方法
 void Button1_dbclick();
+//长按事件实现此方法
 void Button1_lclick();
 
+//按键检测程序
 void Button1_enable();
 	
 

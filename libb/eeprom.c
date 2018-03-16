@@ -24,7 +24,6 @@ void iap_Disable(){
 	IAP_TRIG = 0;
 }
 
-//需要打开IAP功能 在线升级
 void iap_ByteProgram(unsigned int addr,unsigned char dat){
 	IAP_CONTR = ENABLE_IAP;
 	//0x02  写/编程;
