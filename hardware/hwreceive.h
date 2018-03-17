@@ -6,6 +6,8 @@
 
 sbit RECE = P3^3;
 
-char* getcodedata();
+unsigned char* getcodedata();
+
+const unsigned char code  MP3HWTAB[][2];
 
 #endif

@@ -4,7 +4,7 @@
 #include <stc12c5a60s2.h>
 #include "delay.h"
 
-#define IIC_DEL 1
+#define IIC_DEL 0
 
 sbit IIC_SCL = P1^1;
 sbit IIC_SDA = P1^2;
