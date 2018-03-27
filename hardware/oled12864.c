@@ -3,8 +3,7 @@
 //驱动芯片SSD1306
 
 //OLED初始化
-void OLED_SSD1306_Init()
-{
+void OLED_SSD1306_Init(){
   IIC_writeCd(OLED_ADDR,OLED_CMD_ADDR,0xAE);  //ae/af   [显示关/显示开]
 	IIC_writeCd(OLED_ADDR,OLED_CMD_ADDR,0x00);
 	IIC_writeCd(OLED_ADDR,OLED_CMD_ADDR,0x10);  //2个4位合成一个字节作为列指针，页模式下指定显示内存的列位置
@@ -38,8 +37,7 @@ void OLED_SSD1306_Init()
 	OLED_SSD1306_setFocus(0,0);
 }
 
-void OLED_SSD1306_drawImg(unsigned char show[])
-{
+void OLED_SSD1306_drawImg(unsigned char show[]){
   unsigned char x,y;
   unsigned int i=0;
   for(y=0;y<8;y++){

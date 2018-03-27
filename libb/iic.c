@@ -31,7 +31,6 @@ void IIC_writeack(bit ack){
 	IIC_SCL = 1;
 	_nop_();
 	_nop_();
-	_nop_();
   IIC_SCL = 0;
 }
 
@@ -41,7 +40,6 @@ bit IIC_readack(){
   _nop_();
 	_nop_();
 	IIC_SCL = 1;
-	_nop_();
 	_nop_();
 	_nop_();
 	ret = IIC_SDA;
@@ -65,11 +63,13 @@ unsigned char IIC_readByte(){
   unsigned char dat = 0x00,ind;
 	for(ind = 0;ind<8;ind++){
 	  IIC_SCL = 1;
-		Delay10us(IIC_DEL);
+		_nop_();
+		_nop_();
 		dat <<= 1;
 		dat |= IIC_SDA;
 		IIC_SCL = 0;
-		Delay10us(IIC_DEL);
+		_nop_();
+		_nop_();
 	}
 	return dat;
 }

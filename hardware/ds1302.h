@@ -3,7 +3,6 @@
 
 #include <stc12c5a60s2.h>
 #include "delay.h"
-#include "uart.h"
 
 #define DS1302_SEC_ADDR 0x80
 #define DS1302_MIN_ADDR 0x82
