@@ -8,13 +8,13 @@
 #define SPI_SEND_STOP 1;
 
 //时钟
-sbit SPI_CLK = P1^0;
+sbit SPI_CLK = P2^0;
 //主机输出
-sbit SPI_MISO = P1^1;
+sbit SPI_MISO = P2^1;
 //从机输入
-sbit SPI_MOSI = P1^2;
+sbit SPI_MOSI = P2^2;
 //片选
-sbit SPI_CS = P1^5;
+sbit SPI_CS = P2^5;
 
 
 

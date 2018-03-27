@@ -4,8 +4,8 @@
 #include "spi4.h"
 #include "bmp.h"
 
-sbit OLED_RST = P1^3;
-sbit OLED_DC = P1^4;
+sbit OLED_RST = P2^3;
+sbit OLED_DC = P2^4;
 
 void OLED_Init();
 
