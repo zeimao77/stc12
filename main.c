@@ -5,16 +5,17 @@
 
 void display(unsigned int dat);
 
+unsigned int ZERO_LINE = 512;
+
 void main(){
   unsigned int val;
   OLED_Init();
   ADC_init(0x01,ADC_SPEED_180);
-  UART_Init();
   while(1){
-    val = ADC_Read();
-	UART_sendChar(ADC_RES);
-	UART_sendChar(ADC_RESL);
+  val = ADC_Read();
 	display(val);
+	//**********************************************	
+	//**********************************************	
 	Delay1ms(1000);
   }
 }

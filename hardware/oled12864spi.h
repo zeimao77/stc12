@@ -1,8 +1,10 @@
 #ifndef _OLED12864SPI_H_
 #define _OLED12864SPI_H_
 
-#include "spi4.h"
+//#include "spi4.h"
 #include "bmp.h"
+#include "spi.h"
+#include "delay.h"
 
 sbit OLED_RST = P2^3;
 sbit OLED_DC = P2^4;

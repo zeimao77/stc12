@@ -1,5 +1,6 @@
 #include "adc.h"
 
+//CHS为需要转换的IO端口设置
 void ADC_init(unsigned char CHS,unsigned char ADC_SPEED){
   CHS &= 0x70;
   P1ASF = 0xff;
@@ -9,7 +10,7 @@ void ADC_init(unsigned char CHS,unsigned char ADC_SPEED){
   Delay1ms(2);
 }
 
-//输入0-1024
+//输出0-1024
 unsigned int ADC_Read(){
   unsigned char ADFLAG = 0x00;
   ADC_CONTR |= 0x08;

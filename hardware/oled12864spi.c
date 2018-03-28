@@ -1,6 +1,8 @@
 #include "oled12864spi.h"
 
 void OLED_Init(){
+	SPI_init(DORD_HTL,CPOL_LOW);
+	
   OLED_RST = 1;
 	Delay1ms(100);
 	OLED_RST = 0;
@@ -45,13 +47,15 @@ void OLED_Init(){
 
 void OLED_writeCmd(unsigned char cmd){
   OLED_DC = 0;
-	SPI4_writeByte(cmd);
+//	SPI4_writeByte(cmd);
+	SPI_writeByte(cmd);
 	OLED_DC = 1;
 }
 
 void OLED_writeData(unsigned char dat){
   OLED_DC = 1;
-	SPI4_writeByte(dat);
+//	SPI4_writeByte(dat);
+	SPI_writeByte(dat);
 	OLED_DC = 1;
 }
 
