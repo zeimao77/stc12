@@ -5,7 +5,6 @@ unsigned char outL;
 unsigned char count;
 
 void HCSR04_init(){
-	AUXR |= 0x80;
   P1M0 = 0XFF;
 	P1M1 = 0X00;
 	TMOD = 0x01;
@@ -35,7 +34,7 @@ unsigned int testdistance(){
   UART_sendChar(outH);
 	UART_sendChar(outL);
 
-	distant = (count * 0x0000ffff + distant) * 0.01555266;
+	distant = (count * 65536 + distant) * 0.18663;
   return distant;
 }
 
