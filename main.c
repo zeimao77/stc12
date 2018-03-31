@@ -1,33 +1,31 @@
 #include "hcsr04.h"
 #include "oled12864spi.h"
-#include "adc.h"
 #include "uart.h"
 
 void display(unsigned int dat);
 
-unsigned int ZERO_LINE = 512;
+
 
 void main(){
-  unsigned int val;
-  OLED_Init();
-  ADC_init(0x01,ADC_SPEED_180);
+	unsigned int val;
+	UART_Init();
+  HCSR04_init();
+	OLED_Init();
   while(1){
-  val = ADC_Read();
-	display(val);
-	//**********************************************	
-	//**********************************************	
-	Delay1ms(1000);
+		val = testdistance();
+		display(val);
+	  Delay1ms(100);
   }
 }
 
 void display(unsigned int dat){
   unsigned char qian,bai,shi,ge;
-  qian = dat/1000;
-  bai = (dat%1000)/100;
-  shi = (dat%100)/10;
-  ge = dat%10;
-  OLED_drawAscii(0x00,1,qian + 0x30);
-  OLED_drawAscii(0x10,1,bai + 0x30);
-  OLED_drawAscii(0x20,1,shi + 0x30);
-  OLED_drawAscii(0x30,1,ge + 0x30);
+  qian = dat/1000 + 0x30;
+  bai = (dat%1000)/100 + 0x30;
+  shi = (dat%100)/10 + 0x30;
+  ge = dat%10 + 0x30;
+  OLED_drawAscii(0x00,1,qian);
+  OLED_drawAscii(0x10,1,bai);
+  OLED_drawAscii(0x20,1,shi);
+  OLED_drawAscii(0x30,1,ge);
 }

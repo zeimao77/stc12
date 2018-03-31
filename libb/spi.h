@@ -13,6 +13,8 @@
 //SPICLK时钟选择[空闲低电平]
 #define CPOL_LOW 0x00
 
+sbit SS = P1^4;
+
 void SPI_init(unsigned char DORD,unsigned char CPOL);
 
 void SPI_writeByte(unsigned char DAT);

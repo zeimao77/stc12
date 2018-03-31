@@ -3,6 +3,7 @@
 
 #include <stc12c5a60s2.h>
 #include "delay.h"
+#include "uart.h"
 
 //如果需要修改端口 需要注意修改函数中的端口以推挽输入方式驱动测距模块
 sbit TRIG = P1^0;
