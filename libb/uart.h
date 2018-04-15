@@ -7,7 +7,10 @@
 
 //´®¿Ú³õÊ¼»¯
 void UART_Init(void);
+void UART2_Init(void);
 void UART_sendChar(unsigned char dat);
+void UART2_sendChar(unsigned char dat);
 void UART_sendStr(unsigned char *str);
+void UART2_sendStr(unsigned char *str);
 
 #endif

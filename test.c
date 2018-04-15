@@ -1,34 +1,32 @@
-// 超声波测距12864显示***********************************************************
-//#include "hcsr04.h"
-//#include "oled12864spi.h"
+
+// 串口2发送与接收***********************************************************
 //#include "uart.h"
-
-//void display(unsigned int dat);
-
-
-
+//
+//unsigned char flag,temp1;
+//
 //void main(){
-//	unsigned int val;
-//	UART_Init();
-//  HCSR04_init();
-//	OLED_Init();
-//  while(1){
-//		val = testdistance();
-//		display(val);
-//	  Delay1ms(100);
-//  }
+//   UART_Init();
+//   UART2_Init();
+//   EA = 1;
+//   IE2 = 0x01;
+//   P0M1 = 0x00;
+//   P0M0 = 0xff;
+//   while(1){
+//     if(flag){
+//	 	flag = 0x00;
+//		P0 = temp1;
+//		UART_sendChar(temp1);
+//		UART2_sendChar(temp1);
+//	 }
+//   }
 //}
-
-//void display(unsigned int dat){
-//  unsigned char qian,bai,shi,ge;
-//  qian = dat/1000 + 0x30;
-//  bai = (dat%1000)/100 + 0x30;
-//  shi = (dat%100)/10 + 0x30;
-//  ge = dat%10 + 0x30;
-//  OLED_drawAscii(0x00,1,qian);
-//  OLED_drawAscii(0x10,1,bai);
-//  OLED_drawAscii(0x20,1,shi);
-//  OLED_drawAscii(0x30,1,ge);
+//
+//void UART2_INTERRUPT(void) interrupt 8{
+//  if(S2CON&0x01){
+//    S2CON&=~0x01;
+//	flag = 0x01;
+//	temp1 = S2BUF;
+//  }
 //}
 
 
